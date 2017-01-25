@@ -18,7 +18,9 @@ SELECT *
 FROM employees
 WHERE birth_date LIKE '%12-25';
 
-SELECT *
+SELECT concat(first_name, ' ', last_name) as 'Full_Name', count(first_name) as 'Number of People With This Name'
 FROM employees
 WHERE (last_name LIKE '%q%'
-       AND NOT last_name LIKE '%qu%');
+       AND NOT last_name LIKE '%qu%')
+GROUP BY Full_Name
+ORDER BY `Number of People With This Name` DESC;
