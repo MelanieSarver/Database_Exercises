@@ -1,12 +1,11 @@
-SELECT concat(count(*), ' ', gender)
+SELECT concat(count(*), ' ', gender) as 'Count by gender'
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya')
 GROUP BY gender;
 
-SELECT *
+SELECT concat(first_name, ' ', last_name) as 'Names'
 FROM employees
-WHERE (last_name LIKE 'e%'
-       AND last_name LIKE '%e')
+WHERE last_name LIKE 'e%e'
 ORDER BY emp_no DESC;
 
 SELECT *
