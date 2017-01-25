@@ -7,7 +7,8 @@ WHERE (first_name = 'Irena'
 
 SELECT *
 FROM employees
-WHERE last_name LIKE 'e%';
+WHERE (last_name LIKE 'e%'
+OR last_name LIKE '%e');
 
 SELECT *
 FROM employees
