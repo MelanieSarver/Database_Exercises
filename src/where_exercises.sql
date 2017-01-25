@@ -3,5 +3,10 @@ FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya');
 
 SELECT *
-From employees
-WHERE last_name Like 'e%';
+FROM employees
+WHERE last_name LIKE 'e%';
+
+SELECT *
+FROM employees
+WHERE hire_date LIKE '199%';
+
