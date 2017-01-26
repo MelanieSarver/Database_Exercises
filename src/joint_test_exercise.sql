@@ -29,4 +29,9 @@ FROM employees e
   Join departments ON dept_manager.dept_no = departments.dept_no
 WHERE dept_manager.to_date > curdate();
 
+SELECT dept_name AS 'Department Name', concat(first_name, ' ', last_name) AS 'Manager Name'
+FROM employees e
+  JOIN dept_manager ON e.emp_no = dept_manager.emp_no
+  Join departments ON dept_manager.dept_no = departments.dept_no
+WHERE dept_manager.to_date > curdate() AND e.gender = 'F';
 
