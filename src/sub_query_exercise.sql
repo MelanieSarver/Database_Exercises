@@ -29,6 +29,7 @@ WHERE emp_no IN (
 SELECT DISTINCT dept_name
 FROM dept_manager
 JOIN departments
+ON dept_manager.dept_no = departments.dept_no
 WHERE emp_no IN (
   SELECT emp_no
   FROM employees
