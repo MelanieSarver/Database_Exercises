@@ -22,4 +22,17 @@ FROM employees
 WHERE emp_no IN (
   SELECT emp_no
   FROM dept_manager
+  WHERE emp_no = dept_manager.emp_no
+  AND employees.gender = 'F'
 );
+
+SELECT DISTINCT dept_name
+FROM dept_manager
+JOIN departments
+WHERE emp_no IN (
+  SELECT emp_no
+  FROM employees
+  WHERE gender = 'F'
+);
+
+
